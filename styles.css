@@ -172,6 +172,64 @@ nav {
   border-radius: 5px;
   cursor: pointer;
 }
+/* Add media queries for responsive design */
+
+@media only screen and (max-width: 768px) {
+  .nav__logo h1 {
+    font-size: 24px; /* Decrease font size for smaller screens */
+  }
+
+  .nav__links {
+    gap: 1rem; /* Decrease the gap between links for smaller screens */
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .nav__links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: var(--primary-color-light);
+    padding: 1rem;
+  }
+
+  .link a {
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nav__links.show {
+    display: flex;
+  }
+
+  /* Adjust cart icon styling for small screens */
+  nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem; /* Adjust margin as needed */
+  }
+
+  nav .ri-shopping-cart-fill {
+    margin-bottom: 0.5rem; /* Adjust margin as needed */
+    font-size: 1.5rem;
+  }
+
+   /* Hide the "Join Now" button */
+   button.btn[onclick="scrollToService()"] {
+    display: none;
+  }
+  /* Reduce the size of the search bar */
+  #search-input {
+    width: 80%; /* Adjust the width as needed */
+  }
+}
+
 /* Add styles for star-filled and star-empty */
 .item-rating {
   font-size: 20px; /* Adjust the font size as needed */

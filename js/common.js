@@ -44,3 +44,16 @@ function generateStarRating(rating, container) {
         container.appendChild(star);
     }
 }
+// JavaScript to toggle navigation and update button text/icon
+var isNavOpen = false; // Keep track of navigation state
+
+document.getElementById('toggle-nav').addEventListener('click', function() {
+  isNavOpen = !isNavOpen; // Toggle navigation state
+
+  // Update button text based on navigation state
+  document.getElementById('toggle-text').innerText = isNavOpen ? 'Hide Navigation' : 'Show Navigation';
+
+  // Update button icon based on navigation state
+  var iconElement = document.querySelector('#toggle-nav .ri-menu-line');
+  iconElement.className = isNavOpen ? 'ri-close-line' : 'ri-menu-line';
+});

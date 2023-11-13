@@ -357,3 +357,11 @@ function submitReservation() {
     // Close the form after submission
     closeReservationForm();
 }
+
+// JavaScript code for toggle button
+document.getElementById('toggle-nav').addEventListener('click', function() {
+    var navLinks = document.querySelector('.nav__links');
+    navLinks.classList.toggle('show');
+  });
+  
+  
