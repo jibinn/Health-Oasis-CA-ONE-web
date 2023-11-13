@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./styles.css"/>
+    <title>Cart Details</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="./js/cart.js" defer></script>
+    <script src="./js/common.js" defer></script>
+    
+
+</head>
+<body>
+  <nav>
+    <div class="nav__logo">
+      <a href="index.html"><h1>Health Oasis</h1></a>
+    </div>
+    
+    <ul class="nav__links">
+      <li class="link"><a href="index.html">Home</a></li>
+      <li class="link"><a href="#gym-equipment">Gym Equipments</a></li>
+      <li class="link"><a href="#service">Service</a></li>
+      <li class="link"><a href="#about">About</a></li>
+      <li class="link"><a href="#community">Community</a></li>
+    </ul>
+    <button class="btn">Join Now</button>
+    <a href="cart.html">
+      <span class="ri-shopping-cart-fill"></span>
+      <span id="cart-count">0</span>
+  </a>
+  </nav>
+    <h2>Cart Details</h2>
+    <div class="cart-items" id="cart-items-container">
+      <!-- Cart items will be dynamically added here -->
+    </div>
+    <p class="cart-total-price">Total: $0.00</p>
+    <button class="btn btn-primary" onclick="purchaseClicked()">Purchase</button>
+</body>
+</html>
+

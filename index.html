@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Health Oasis | ShapeUp - Sculpting a Better You</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="./js/cart.js" defer></script>
+    <script src="./js/common.js" defer></script>
+
+</head>
+<body>
+    <!-- Navigation Section -->
+    <nav>
+      <div class="nav__logo">
+        <a href="#home"><h1>Health Oasis</h1></a>
+      </div>
+      
+      <ul class="nav__links">
+        <li class="link"><a href="#home">Home</a></li>
+        <li class="link"><a href="#gym-equipment">Gym Equipments</a></li>
+        <li class="link"><a href="#service">Service</a></li>
+        <li class="link"><a href="#about">About</a></li>
+        <li class="link"><a href="#community">Community</a></li>
+      </ul>
+      <!-- Remove the search button -->
+<div class="nav__search">
+  <input type="text" id="search-input" placeholder="Search Gym Equipment...">
+  <!-- Suggestions will be displayed below the input -->
+</div>
+
+<button class="btn" onclick="scrollToService()">Join Now</button>
+      <a href="cart.html">
+        <!-- You can also use a button or another element -->
+        <span class="ri-shopping-cart-fill"></span>
+        <span id="cart-count">0</span>
+    </a>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="section__container header__container" id="home">
+      <div class="header__content">
+        <span class="bg__blur"></span>
+        <span class="bg__blur header__blur"></span>
+        <h4>ACHIEVE YOUR OPTIMAL FITNESS</h4>
+        <h1><span>CRAFT</span> YOUR PHYSIQUE</h1>
+        <p >
+          Unleash your potential and embark on a journey towards a stronger,
+          fitter, and more confident you. Sign up for 'Make Your Body Shape' now
+          and witness the incredible transformation your body is capable of!
+        </p>
+        <button class="btn">Get Started</button>
+      </div>
+      <div class="header__image">
+        <img src="./assets/about-banner.png" alt="header" />
+      </div>
+    </header>
+  <!-- 
+  - #GYM EQUIPMENT
+-->
+
+<section class="section gym-equipment" id="gym-equipment" aria-label="gym-equipment">
+  <!-- Equipment Actions -->
+  <div class="cart-items" id="cart-items-container">
+    <!-- Cart items will be dynamically added here -->
+</div>
+  </div>
+  <div class="popup popup--icon popup--success js_success-popup">
+    <div class="popup__background"></div>
+    <div class="popup__content">
+      <div class="checkmark">&#10003;</div>
+
+      <h3 class="popup__content__title">
+         Successfully AddtoCart
+      </h3>
+      <p id="popup-message"></p>
+      <p>
+        <button class="button button--success" data-for="js_success-popup" onclick="hidePopup()">Hide Popup</button>
+      </p>
+    </div>
+  </div>
+  
+
+  <div class="gym-equipment-content">
+    <p class="section-subtitle">Fitness Essentials</p>
+    <h2 class="h2 section-title">Explore High-Quality Gym Equipment</h2>
+    <p class="section-text">
+      Elevate your workout routine with our premium selection of gym equipment. From dumbbells to resistance bands, we have everything you need to build a home gym or enhance your fitness space.
+    </p>
+    <div class="container">
+      <div class="equipment-list">
+        <!-- Equipment Item 1 -->
+        <div class="equipment-item" id="product-1">
+          <img src="./assets/pngegg.png" width="200" height="200" loading="lazy" alt="Dumbbell">
+          <h3 class="h3 item-title">Adjustable Dumbbells</h3>
+          <p class="item-description">Versatile and adjustable for various workouts.</p>
+          <div class="item-rating" data-rating="5"></div> <!-- Rating section -->
+          <div class="item-actions">
+            <span class="item-price">$149.99</span>
+            <button class="btn btn-primary" data-product-id="1">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Equipment Item 2 -->
+        <div class="equipment-item" id="product-2">
+          <img src="./assets/matt.png" width="200" height="200" loading="lazy" alt="Yoga Mat">
+          <h3 class="h3 item-title">Premium Yoga Mat</h3>
+          <p class="item-description">Enhance your yoga practice with our comfortable.</p>
+          <div class="item-rating" data-rating="4"></div> <!-- Rating section -->
+          <div class="item-actions">
+            <span class="item-price">$34.99</span>
+            <button class="btn btn-primary" data-product-id="2">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Equipment Item 3 -->
+        <div class="equipment-item" id="product-3">
+          <img src="./assets/ketbell.png" width="200" height="200" loading="lazy" alt="Kettlebell">
+          <h3 class="h3 item-title">Adjustable Kettlebell</h3>
+          <p class="item-description">Versatile kettlebell for strength and endurance training.</p>
+          <div class="item-rating" data-rating="5"></div> <!-- Rating section -->
+          <div class="item-actions">
+            <span class="item-price">$49.99</span>
+            <button class="btn btn-primary" data-product-id="3">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Equipment Item 4 -->
+        <div class="equipment-item" id="product-4">
+          <img src="./assets/ball.png" width="200" height="200" loading="lazy" alt="Exercise Ball">
+          <h3 class="h3 item-title">Anti-Burst Exercise Ball</h3>
+          <p class="item-description">Strengthen your core and stability with our exercise ball.</p>
+          <div class="item-rating" data-rating="3"></div> <!-- Rating section -->
+          <div class="item-actions">
+            <span class="item-price">$19.99</span>
+            <button class="btn btn-primary" data-product-id="4">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Equipment Item 5 -->
+        <div class="equipment-item" id="product-5">
+          <img src="./assets/bench.png" width="200" height="200" loading="lazy" alt="Weight Bench">
+          <h3 class="h3 item-title">Adjustable Weight Bench</h3>
+          <p class="item-description">Customizable weight bench for versatile workouts.</p>
+          <div class="item-rating" data-rating="4"></div> <!-- Rating section -->
+          <div class="item-actions">
+            <span class="item-price">$89.99</span>
+            <button class="btn btn-primary" data-product-id="5">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Equipment Item 6 -->
+        <div class="equipment-item" id="product-6">
+          <img src="./assets/band.png" width="200" height="200" loading="lazy" alt="Resistance Bands">
+          <h3 class="h3 item-title">Resistance Bands Setup</h3>
+          <p class="item-description">Durable resistance powerfull bands for the  full-body workouts .</p>
+          <div class="item-rating" data-rating="5"></div> <!-- Rating section -->
+          <div class="item-actions">
+            <span class="item-price">$29.99</span>
+            <button class="btn btn-primary" data-product-id="6">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Equipment Item 7 -->
+        <div class="equipment-item" id="product-7">
+          <img src="./assets/pullmachine.png" width="200" height="200" loading="lazy" alt="Rowing Machine">
+          <h3 class="h3 item-title">Compact Rowing Machine</h3>
+          <p class="item-description">Space-saving rowing machine for effective cardio workouts.</p>
+          <div class="item-rating" data-rating="2"></div> <!-- Rating section -->
+          <div class="item-actions">
+            <span class="item-price">$249.99</span>
+            <button class="btn btn-primary" data-product-id="7">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Equipment Item 8 -->
+        <div class="equipment-item" id="product-8">
+          <img src="./assets/shoes.png" width="200" height="200" loading="lazy" alt="Running Shoes">
+          <h3 class="h3 item-title">Running Shoes</h3>
+          <p class="item-description">Comfortable and supportive running shoes for your workouts.</p>
+          <div class="item-rating" data-rating="5"></div> <!-- Rating section -->
+          <div class="item-actions">
+            <span class="item-price">$79.99</span>
+            <button class="btn btn-primary" data-product-id="8">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="equipment-actions">
+        <!-- Add an id to the link -->
+        <a href="#gym-equipment" class="btn-link" id="view-all-equipment">View All Equipment</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Explore Programs Section -->
+    <section class="section__container explore__container" id="service">
+      <div class="explore__header">
+        <h2 class="section__header">EXPLORE OUR PROGRAM</h2>
+        <div class="explore__nav">
+          <span><i class="ri-arrow-left-line"></i></span>
+          <span><i class="ri-arrow-right-line"></i></span>
+        </div>
+      </div>
+      <div class="explore__grid">
+        <!-- Strength Program -->
+        <div class="explore__card">
+          <span><i class="ri-boxing-fill"></i></span>
+          <h4>Strength</h4>
+          <p>
+            Embrace the essence of strength as we delve into its various
+            dimensions physical, mental, and emotional.
+          </p>
+          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <!-- Physical Fitness Program -->
+        <div class="explore__card">
+          <span><i class="ri-heart-pulse-fill"></i></span>
+          <h4>Physical Fitness</h4>
+          <p>
+            It encompasses a range of activities that improve health, strength,
+            flexibility, and overall well-being.
+          </p>
+          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <!-- Fat Loss Program -->
+        <div class="explore__card">
+          <span><i class="ri-run-line"></i></span>
+          <h4>Fat Lose</h4>
+          <p>
+            Through a combination of workout routines and expert guidance, we'll
+            empower you to reach your goals.
+          </p>
+          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <!-- Weight Gain Program -->
+        <div class="explore__card">
+          <span><i class="ri-shopping-basket-fill"></i></span>
+          <h4>Weight Gain</h4>
+          <p>
+            Designed for individuals, our program offers an effective approach
+            to gaining weight in a sustainable manner.
+          </p>
+          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+      </div>
+    </section>
+
+  <!-- Class Section -->
+<section class="section__container class__container" id="about">
+  <div class="class__image">
+      <span class="bg__blur"></span>
+      <img src="./assets/blog-1.jpg" alt="class" class="class__img-1" />
+      <img src="./assets/blog-2.jpg" alt="class" class="class__img-2" />
+  </div>
+  <div class="class__content">
+      <h2 class="section__header">THE CLASS YOU WILL GET HERE</h2>
+      <p>
+          Led by our team of expert and motivational instructors, "The Class You
+          Will Get Here" is a high-energy, results-driven session that combines
+          a perfect blend of cardio, strength training, and functional
+          exercises. Each class is carefully curated to keep you engaged and
+          challenged, ensuring you never hit a plateau in your fitness
+          endeavors.
+      </p>
+      <button class="btn" onclick="openReservationForm()">Book A Class</button>
+  </div>
+</section><!-- Reservation Form Modal -->
+<div id="reservation-form" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeReservationForm()">&times;</span>
+        <h2>Reservation Form</h2>
+        <form id="reservation-form-content">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <button type="button" onclick="submitReservation()">Submit Reservation</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+    <!-- Join Us Section -->
+    <section class="section__container join__container">
+      <h2 class="section__header">WHY JOIN US ?</h2>
+      <p class="section__subheader">
+        Our diverse membership base creates a friendly and supportive
+        atmosphere, where you can make friends and stay motivated.
+      </p>
+      <div class="join__image">
+        <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/eaRQF-7hhmo?si=tde3NEE6ebPttROX"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+></iframe>
+
+        <div class="join__grid">
+          <!-- Personal Trainer Card -->
+          <div class="join__card">
+            <span><i class="ri-user-star-fill"></i></span>
+            <div class="join__card__content">
+              <h4>Personal Trainer</h4>
+              <p>Unlock your potential with our expert Personal Trainers.</p>
+            </div>
+          </div>
+          <!-- Practice Sessions Card -->
+          <div class="join__card">
+            <span><i class="ri-vidicon-fill"></i></span>
+            <div class="join__card__content">
+              <h4>Practice Sessions</h4>
+              <p>Elevate your fitness with practice sessions.</p>
+            </div>
+          </div>
+          <!-- Good Management Card -->
+          <div class="join__card">
+            <span><i class="ri-building-line"></i></span>
+            <div class="join__card__content">
+              <h4>Good Management</h4>
+              <p>Supportive management, for your fitness success.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section__container price__container" id="community">
+      <h2 class="section__header">OUR PRICING PLAN</h2>
+      <p class="section__subheader">
+        Our pricing plan comes with various membership tiers, each tailored to
+        cater to different preferences and fitness aspirations.
+      </p>
+      <div class="price__grid">
+        <!-- Basic Plan Card -->
+        <div class="price__card">
+          <div class="price__card__content">
+            <h4>Basic Plan</h4>
+            <h3>$16</h3>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Smart workout plan
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              At home workouts
+            </p>
+          </div>
+          <button class="btn price__btn">Join Now</button>
+        </div>
+        <!-- Weekly Plan Card -->
+        <div class="price__card">
+          <div class="price__card__content">
+            <h4>Weekly Plan</h4>
+            <h3>$25</h3>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              PRO Gyms
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Smart workout plan
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              At home workouts
+            </p>
+          </div>
+          <button class="btn price__btn">Join Now</button>
+        </div>
+        <!-- Monthly Plan Card -->
+        <div class="price__card">
+          <div class="price__card__content">
+            <h4>Monthly Plan</h4>
+            <h3>$45</h3>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              ELITE Gyms & Classes
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              PRO Gyms
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Smart workout plan
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              At home workouts
+            </p>
+            <p>
+              <i class="ri-checkbox-circle-line"></i>
+              Personal Training
+            </p>
+          </div>
+          <button class="btn price__btn">Join Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Member Review Section -->
+    <section class="review">
+      <div class="section__container review__container">
+        <span><i class="ri-double-quotes-r"></i></span>
+        <div class="review__content">
+          <h4>MEMBER REVIEW</h4>
+          <p>
+            What truly sets this gym apart is their expert team of trainers. The
+            trainers are knowledgeable, approachable, and genuinely invested in
+            helping members achieve their fitness goals. They take the time to
+            understand individual needs and create personalized workout plans,
+            ensuring maximum results and safety.
+          </p>
+          <div class="review__rating">
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-half-fill"></i></span>
+          </div>
+          <div class="review__footer">
+            <div class="review__member">
+              <img src="./assets/about-coach.jpg" alt="member" />
+              <div class="review__member__details">
+                <h4>Gautham Binoy</h4>
+                <p>Software Developer</p>
+              </div>
+            </div>
+            <div class="review__nav">
+              <span><i class="ri-arrow-left-line"></i></span>
+              <span><i class="ri-arrow-right-line"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="section__container footer__container">
+      <span class="bg__blur"></span>
+      <span class="bg__blur footer__blur"></span>
+      <div class="footer__col">
+        <div class="footer__logo"><img src="./assets/class-icon-1.png" alt="logo" /></div>
+        <p>
+          Take the first step towards a healthier, stronger you with our
+          unbeatable pricing plans. Let's sweat, achieve, and conquer together!
+        </p>
+        <div class="footer__socials">
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-twitter-fill"></i></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="#">Business</a>
+        <a href="#">Franchise</a>
+        <a href="#">Partnership</a>
+        <a href="#">Network</a>
+      </div>
+      <div class="footer__col">
+        <h4>About Us</h4>
+        <a href="#">Blogs</a>
+        <a href="#">Security</a>
+        <a href="#">Careers</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="#">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</
+          <a href="#">BMI Calculator</a>
+        </div>
+      </footer>
+    
+<!-- Check if the document is still loading -->
+<script>
+  if (document.readyState == 'loading') {
+      // If loading, wait for the DOMContentLoaded event
+      document.addEventListener('DOMContentLoaded', ready);
+  } else {
+      // If already loaded, call the ready function directly
+      ready();
+  }
+</script>
+      </body>
+      </html>
